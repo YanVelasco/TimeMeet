@@ -18,10 +18,18 @@ function criarElementoTarefa(tarefa) {
             </svg>
         `;
   const paragrafo = document.createElement("p");
+
   paragrafo.textContent = tarefa.deescricao;
   paragrafo.classList.add("app__section-task-list-item-description")
+
   const botao = document.createElement("button");
   botao.classList.add("app_button-edit");
+
+  botao.onclick = () => {
+    const novaDescricao = prompt("Qual o novo nome da terefa?");
+    paragrafo.textContent = novaDescricao;
+  }
+
   const imagemBotao = document.createElement("img");
   imagemBotao.setAttribute("src", "/imagens/edit.png");
 
