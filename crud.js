@@ -1,3 +1,4 @@
+const btnCancelar = document.querySelector(".app__form-footer__button--cancel")
 const btnAdionarTarefa = document.querySelector(".app__button--add-task");
 const formAdicicionarTarefa = document.querySelector(".app__form-add-task");
 const textArea = document.querySelector(".app__form-textarea");
@@ -71,3 +72,8 @@ tarefas.forEach((tarefa) => {
   const elementoTarefa = criarElementoTarefa(tarefa);
   ulTarefas.append(elementoTarefa);
 });
+
+btnCancelar.onclick = () =>{
+  textArea.value = "";
+  formAdicicionarTarefa.classList.add("hidden");
+}
